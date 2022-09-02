@@ -20,7 +20,6 @@ size_t binary_tree_height(const binary_tree_t *tree)
 		h_r = 1 + binary_tree_height(tree->right);
 	if (tree->left && !tree->right)
 		h_r++;
-	printf("h_l = %ld y h_r = %ld\n", h_l, h_r);
 	if (h_l > h_r)
 		return (h_l);
 	return (h_r);

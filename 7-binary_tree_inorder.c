@@ -8,14 +8,9 @@
 
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
-	binary_tree_t *aux = NULL;
-	
-	aux = tree;
-	while (aux->left)
-	{
-		aux = aux->left;
-		if (!aux->right)
-			aux = aux->parent;
-		func(aux->n);
-	}
-}	
+	if (!tree)
+		return;
+	binary_tree_inorder(tree->left, func);
+	binary_tree_inorder(tree->right, func);
+	func(tree->n);
+}
